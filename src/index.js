@@ -42,7 +42,9 @@ login({
                         winners.push(candidate);
                     }
                 }
-                send(`candidate ${winners.join()} got the most votes - current count ${maxCount}`);
+                if (winners.length > 0) {
+                    send(`candidate ${winners.join()} got the most votes - current count ${maxCount}`);
+                }
                 state = NOT_VOTING;
                 candidates.clear();
                 send("state changed - not voting");
