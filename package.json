@@ -1,0 +1,12 @@
+{
+  "name": "smallbig",
+  "version": "0.0.1",
+  "description": "Simple FB messenger chatbot code",
+  "main": "src/index.js",
+  "repository": "https://github.com/SSHS-Tart/smallbig.git",
+  "author": "SSHS-Tart <tartsmallbig@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "facebook-chat-api": "^1.7.0"
+  }
+}
