@@ -1,11 +1,10 @@
+const fs = require("fs");
 const login = require("facebook-chat-api");
-
 const NOT_VOTING = "not-voting";
 const VOTING = "voting";
 
 login({
-    email: "tartsmallbig@gmail.com",
-    password: "SSHStart1"
+    appState: JSON.parse(fs.readFileSync("appstate.json", "utf8"))
 }, (err, api) => {
     let state = NOT_VOTING;
     let candidates = new Map/*<String, Number>*/();
