@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { promises: fs } = require("fs");
 const { promisify } = require("util");
 const log = require("npmlog");
@@ -13,8 +14,8 @@ const VOTING = "voting";
     } catch (err) {
         log.info("credentials", "appstate.json doesn't exist.");
         credentials = {
-            email: "slayerqueen100@gmail.com",
-            password: "SSHStart1"
+            email: process.env.FB_EMAIL,
+            password: process.env.FB_PWD
         };
     }
     try {
