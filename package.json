@@ -7,6 +7,7 @@
   "author": "SSHS-Tart <tartsmallbig@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "facebook-chat-api": "^1.7.0"
+    "facebook-chat-api": "^1.7.0",
+    "npmlog": "^4.1.2"
   }
 }

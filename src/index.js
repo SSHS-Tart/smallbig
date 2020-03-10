@@ -1,5 +1,6 @@
 const { promises: fs } = require("fs");
 const { promisify } = require("util");
+const log = require("npmlog");
 const login = promisify(require("facebook-chat-api"));
 const NOT_VOTING = "not-voting";
 const VOTING = "voting";
@@ -10,6 +11,7 @@ const VOTING = "voting";
         let appState = JSON.parse(await fs.readFile("appstate.json", "utf8"));
         credentials = { appState };
     } catch (err) {
+        log.info("credentials", "appstate.json doesn't exist.");
         credentials = {
             email: "slayerqueen100@gmail.com",
             password: "SSHStart1"
@@ -27,7 +29,7 @@ const VOTING = "voting";
             let id = message.threadID;
             let send = (body) => api.sendMessage(body, id);
             if (err) {
-                console.error(err);
+                log.error("listenMqtt", err);
                 return;
             }
 
@@ -65,6 +67,6 @@ const VOTING = "voting";
             }
         });
     } catch (err) {
-        console.error(err);
+        log.error("login", err);
     };
 })();
